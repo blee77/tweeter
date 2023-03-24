@@ -1,0 +1,91 @@
+ .tweet {
+   background-color: inherit;
+   border: 1px solid black;
+   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+   margin-bottom: 20px;
+   padding: 20px;
+   margin: auto;
+   width: 90%;
+ }
+
+
+ article:hover {
+   box-shadow: 10px 10px 10px 0px rgba(57, 67, 135, 0.3);
+ }
+
+ article:hover .child {
+   box-shadow: 10px 10px 10px 0px rgba(57, 67, 135, 0.3);
+ }
+
+ .tweet header {
+   display: flex;
+   align-items: center;
+   margin-bottom: 10px;
+ }
+
+ .tweet header img {
+   border-radius: 50%;
+   margin-right: 10px;
+ }
+
+ .tweet header h3 {
+   font-size: 18px;
+   margin-right: 5px;
+ }
+
+ .tweet header span {
+   font-size: 16px;
+   color: #999;
+ }
+
+ .tweet-body p {
+   margin: 0;
+   border-bottom: 5px solid black;
+ }
+
+ p {
+   padding-bottom: 20px;
+ }
+
+ .tweet footer {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 20px;
+ }
+
+ .tweet footer span {
+   font-size: 14px;
+   color: #999;
+ }
+
+ .tweet-actions {
+   display: flex;
+   gap: 15px;
+ }
+
+ .tweet-actions a {
+   color: darkblue;
+ }
+
+ .tweet-actions a:hover {
+   color: darkgoldenrod;
+ }
+
+ .tweet-actions i {
+   font-size: 18px;
+ }
+
+
+
+
+ .tweet-header2 {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+ }
+
+ .profile {
+   display: flex;
+   flex-direction: row;
+ }
