@@ -33,7 +33,7 @@
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-
+  <script src="https://cdn.jsdelivr.net/npm/timeago.js"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -70,15 +70,13 @@
       <h2>Compose Tweet</h2>
       <div class="bodyContainer">
 
-        <form action="/tweets/" method="POST">
+        <!-- <form action="/tweets/" method="POST"> -->
+       <form id="tweet-form">
 
           <div class="tweetTextarea">
-
             <label for="tweet-text">What are you humming about? </label>
             <textarea name="text" id="tweet-text"></textarea>
-
           </div>
-
           <div class="tweetSubmitCounter">
 
             <button type="submit">Tweet</button>
@@ -86,37 +84,9 @@
 
           </div>
         </form>
+
     </section>
-    <!-- Within the main container on the page, below/after the form 
-      section, add a new section that will serve as a container 
-      for all the tweets. -->
-<!-- 
-    <article class="tweet">
-      <header class="tweet-header2">
-        <div class="profile">
-          <div>
-            <img src="https://i.imgur.com/73hZDYK.png" alt="Profile picture">
-          </div>
-          <h3>Newton</h3>
-        </div>
-        <div class="tweet-at">
-          <span>@SirIsaac</span>
-        </div>
-      </header>
-
-      <div class="tweet-body">
-        <p>Here's some fake text for the tweet element!</p>
-      </div>
-      <footer>
-        <span>10:00 AM - 1 Jan 2023</span>
-        <div class="tweet-actions">
-          <a href="#"><i class="fa-solid fa-flag"></i></a>
-          <a href="#"><i class="fas fa-retweet"></i></a>
-          <a href="#"><i class="fa-solid fa-heart"></i></a>
-
-        </div>
-      </footer>
-    </article> -->
+   
 
     <section class="tweets-container" id="tweets-container">
 
