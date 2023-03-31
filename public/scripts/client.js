@@ -9,6 +9,9 @@
 
 
 $(document).ready(function() {
+  
+      // Hide the errorMessage section by default
+      $('.errorMessage').hide();
 
   
   const $form = $('#tweet-form');
@@ -19,14 +22,19 @@ $(document).ready(function() {
     const $inputField = $('#tweet-text');
 
     const tweetContent = $inputField.val().trim();
+  
+
     console.log(tweetContent);
     if (tweetContent === null || tweetContent === "")  {
-      
-      alert('Tweet content cannot be empty');
+      $('.errorMessage').text('Tweet content cannot be empty');
+      $('.errorMessage').slideDown();
+      // alert('Tweet content cannot be empty');
     } else if (tweetContent.length > 140) {
-  
-      alert('Tweet content exceeds 140 characters');
+      $('.errorMessage').text('Tweet content exceeds 140 characters');
+      $('.errorMessage').slideDown();
+      // alert('Tweet content exceeds 140 characters');
     } else {
+      $('.errorMessage').hide();
       const data = $(event.target).serialize();
       console.log(data);
 
@@ -36,16 +44,19 @@ $(document).ready(function() {
         success: (response) => {
           console.log("Ajax call successful", response);
           $inputField.val('');
+          loadTweets();
+          
         },
         error: (err) => console.error(err),
       });
-
+      
     }
     
   });
 
 
   const loadTweets = function() {
+    
     $.ajax({
       method: 'GET',
       url: 'http://localhost:8080/tweets',
@@ -58,14 +69,27 @@ $(document).ready(function() {
       }
     });
   };
-
+  
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const createTweetElement = function(tweet) {
+
+    
+
+    // console.log(tweet); // log the tweet object
+    // console.log(tweet.user.avatars); // log the user object of the tweet
+
     let $tweet = `<article class="tweet">
+    
 <header class="tweet-header2">
   <div class="profile">
     <div>
       <img src=${tweet.user.avatars} alt="Profile picture">
+      
     </div>
     <h3>${tweet.user.name}</h3>
   </div>
@@ -75,7 +99,7 @@ $(document).ready(function() {
 </header>
 
 <div class="tweet-body">
-  <p>${tweet.content.text}</p>
+  <p>${escape(tweet.content.text)}</p>
 </div>
 <footer>
   <span>${timeago.format(tweet.created_at)}</span>
@@ -88,7 +112,9 @@ $(document).ready(function() {
 </footer>
 </article>
 `;
+
     return $tweet;
+ 
   };
 
   const renderTweets = function(tweets) {
