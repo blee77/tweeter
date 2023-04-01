@@ -2,16 +2,18 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-
-![Screenshot of the app's main menu](./docs/tweeter-homepage.png)
-
-![Screenshot of the app's at mobile size](./docs/tweeter-minimized.png)
+# Screenshots
 
 
-![Screenshot of the app's error message](./docs/tweeter-error.png)
+![Screenshot of the app's main menu](https://github.com/blee77/tweeter/blob/master/docs/tweeter-homepage.png)
+
+![Screenshot of the app's at mobile size](https://github.com/blee77/tweeter/blob/master/docs/tweeter-minimized.png)
 
 
-![Screenshot of the app's error message](./docs/tweeter2-error.png)
+![Screenshot of the app's error message](https://github.com/blee77/tweeter/blob/master/docs/tweeter-error.png)
+
+
+![Screenshot of the app's error message](https://github.com/blee77/tweeter/blob/master/docs/tweeter2-error.png)
 
 
 
