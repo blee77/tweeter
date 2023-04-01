@@ -18,9 +18,3 @@ $(document).ready(function () {
 
   });
 });
-
-//1 can i type in my text area see the value - make sure to clean things up confusing
-
-//2 test little by little console it
-
-//3

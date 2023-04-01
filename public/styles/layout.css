@@ -34,3 +34,33 @@ main {
   text-align: center;
   background-color: #f4f1ec;
 }
+
+.tweet-container {
+  margin-top: 100px;
+}
+
+/* Style for desktop screen size */
+@media only screen and (min-width: 1024px) {
+
+  /* Set the display of the body to flex */
+  body {
+    display: flex;
+
+  }
+
+  /* Set the flex properties for each child element */
+  header,
+  main {
+    flex: 1;
+    width: 50%;
+
+  }
+
+  main {
+    margin-top: 80px;
+  }
+
+
+
+
+}

@@ -1,31 +1,24 @@
 
-
-
-
-
-
-
 // Fetching tweets with Ajax
 
+$(document).ready(function () {
 
-$(document).ready(function() {
-  
-      // Hide the errorMessage section by default
-      $('.errorMessage').hide();
+  // Hide the errorMessage section by default
+  $('.errorMessage').hide();
 
-  
+
   const $form = $('#tweet-form');
- 
+
   $form.on('submit', (event) => {
     event.preventDefault();
 
     const $inputField = $('#tweet-text');
 
     const tweetContent = $inputField.val().trim();
-  
+
 
     console.log(tweetContent);
-    if (tweetContent === null || tweetContent === "")  {
+    if (tweetContent === null || tweetContent === "") {
       $('.errorMessage').text('Tweet content cannot be empty');
       $('.errorMessage').slideDown();
       // alert('Tweet content cannot be empty');
@@ -45,40 +38,40 @@ $(document).ready(function() {
           console.log("Ajax call successful", response);
           $inputField.val('');
           loadTweets();
-          
+
         },
         error: (err) => console.error(err),
       });
-      
+
     }
-    
+
   });
 
 
-  const loadTweets = function() {
-    
+  const loadTweets = function () {
+
     $.ajax({
       method: 'GET',
       url: 'http://localhost:8080/tweets',
       dataType: 'json',
-      success: function(data) {
+      success: function (data) {
         renderTweets(data);
       },
-      error: function(error) {
+      error: function (error) {
         console.log(error);
       }
     });
   };
-  
-  const escape = function(str) {
+
+  const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  const createTweetElement = function(tweet) {
+  const createTweetElement = function (tweet) {
 
-    
+
 
     // console.log(tweet); // log the tweet object
     // console.log(tweet.user.avatars); // log the user object of the tweet
@@ -114,10 +107,10 @@ $(document).ready(function() {
 `;
 
     return $tweet;
- 
+
   };
 
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     // your code to render tweets goes here
     // const $tweetsContainer = document.querySelector('#tweets-container');// Assumes a tweets container element with ID "tweets-container"
     const $tweetsContainer = $("#tweets-container");

@@ -32,7 +32,9 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/timeago.js"></script>
 
   <!-- App JS -->
@@ -54,25 +56,25 @@
     </div>
   </nav>
 
-  <header class="tweet-header">
+  <header class="tweet-header" class="margin-top-header">
     <div>
       <img src="/images/profile-hex.png">
     </div>
     <br>
     <div>
-      <h2>Your Name</h2>
+      <h2>Amy Mansell</h2>
     </div>
   </header>
   <!-- Page-specific (main) content here -->
 
   <main id="main-container">
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
+
       <div class="errorMessage"></div>
       <div class="bodyContainer">
 
         <!-- <form action="/tweets/" method="POST"> -->
-       <form id="tweet-form">
+        <form id="tweet-form">
 
           <div class="tweetTextarea">
             <label for="tweet-text">What are you humming about? </label>
@@ -81,7 +83,7 @@
           <div class="tweetSubmitCounter">
 
             <button type="submit">Tweet</button>
-           
+
 
             <output name="counter" class="counter" for="tweet-text">140</output>
 
@@ -89,10 +91,10 @@
         </form>
 
     </section>
-   
 
-    <section class="tweets-container" id="tweets-container">
-      
+
+    <section class="tweet-container" id="tweets-container">
+
     </section>
   </main>
 </body>
