@@ -56,6 +56,7 @@ $(document).ready(function () {
       dataType: 'json',
       success: function (data) {
         renderTweets(data);
+        $('.counter').val(140);
       },
       error: function (error) {
         console.log(error);
@@ -70,11 +71,6 @@ $(document).ready(function () {
   };
 
   const createTweetElement = function (tweet) {
-
-
-
-    // console.log(tweet); // log the tweet object
-    // console.log(tweet.user.avatars); // log the user object of the tweet
 
     let $tweet = `<article class="tweet">
     
@@ -116,12 +112,9 @@ $(document).ready(function () {
     const $tweetsContainer = $("#tweets-container");
 
     // loops through tweets
-    for (const tweetData of tweets) {
-      console.log("+++++++", tweetData);
-      // calls createTweetElement for each tweet
-      const $tweet = createTweetElement(tweetData);
-      // takes return value and appends it to the tweets container
-      $tweetsContainer.append($tweet);
+    $('#tweet-container').empty();
+    for (const tweet of tweets) {
+      $("#tweets-container").prepend(createTweetElement(tweet))
     }
   };
 
